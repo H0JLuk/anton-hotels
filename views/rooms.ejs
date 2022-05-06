@@ -92,26 +92,17 @@
                                     <%= room.description %>
                                 </p>
                                 <div class="ri-features">
-                                    <div class="ri-info">
-                                        <i class="flaticon-019-television"></i>
-                                        <p>Smart TV</p>
-                                    </div>
-                                    <div class="ri-info">
-                                        <i class="flaticon-029-wifi"></i>
-                                        <p>High Wi-fii</p>
-                                    </div>
-                                    <div class="ri-info">
-                                        <i class="flaticon-003-air-conditioner"></i>
-                                        <p>AC</p>
-                                    </div>
-                                    <div class="ri-info">
-                                        <i class="flaticon-036-parking"></i>
-                                        <p>Parking</p>
-                                    </div>
-                                    <div class="ri-info">
-                                        <i class="flaticon-007-swimming-pool"></i>
-                                        <p>Pool</p>
-                                    </div>
+                                    <% for (const service of room.services) { %>
+                                        <div class="ri-info">
+                                            <div style="background-color: grey; padding: 10px 0;">
+                                                <img src="<%= service.icon %>" alt="">
+                                            </div>
+                                            <p>
+                                                <%= service.name %>
+                                            </p>
+                                        </div>
+                                        <% } %>
+
                                 </div>
                                 <a href="/reservation/<%= room.id %>" class="primary-btn">Make a Reservation</a>
                             </div>

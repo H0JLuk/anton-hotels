@@ -59,9 +59,18 @@
     </div>
     <!-- Hero Area Section End -->
 
+
     <!-- Contact Section Begin -->
     <section class="contact-section spad">
         <div class="container">
+            <div>
+                <h2>Room Booking</h2>
+                <h3 style="color: grey; margin-bottom: 10px;">Room: <%= room.title %>
+                </h3>
+                <h4 style="color: #999;margin-bottom: 20px; font-size: 15px">
+                    <%= room.subtitle %>
+                </h4>
+            </div>
             <div class="row">
                 <div class="col-lg-8">
                     <form action="/api/reservation" method="post" class="contact-form">
@@ -73,10 +82,10 @@
                                 <input name="client_email" type="email" required placeholder="Your email">
                             </div>
                             <div class="col-lg-12">
-                                <input name="RoomId" value="<%= roomId %>" type="hidden">
+                                <input name="RoomId" value="<%= room.id %>" type="hidden">
                                 <input name="member_count" type="number" class="subject" placeholder="Members count"
                                     min="1" max="20" required>
-                                <textarea placeholder="Message"></textarea>
+                                <textarea name="message" placeholder="Message"></textarea>
                                 <button type="submit">Send Message</button>
                             </div>
                         </div>

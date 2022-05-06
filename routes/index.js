@@ -8,20 +8,21 @@ router.get('/', async function (req, res, next) {
 
 router.get('/reservation/:roomId', async (req, res, next) => {
   const { roomId } = req.params;
-  res.render('contact', { roomId });
+  const room = await Room.findByPk(roomId);
+  if (!room) {
+    res.redirect('/rooms');
+  }
+  res.render('reservation', { room });
 });
 
 router.get('/rooms', async (req, res, next) => {
-  try {
-    const rooms = await Room.findAll({
-      include: [{ model: Rooms_photos, as: 'photos', attributes: ['photo'] }],
-    });
-    console.log('rooms', rooms);
-    res.render('rooms', { rooms });
-  } catch (e) {
-    console.log('e', e);
-    res.sendStatus(200);
-  }
+  const rooms = await Room.findAll({
+    include: [
+      { model: Rooms_photos, as: 'photos', attributes: ['photo'] },
+      { model: Service, as: 'services', attributes: ['name', 'icon'] },
+    ],
+  });
+  res.render('rooms', { rooms });
 });
 
 router.get('/services', async (req, res, next) => {

@@ -16,6 +16,7 @@ module.exports = {
       },
       RoomId: {
         type: Sequelize.INTEGER,
+        references: { model: 'Room', key: 'id' },
       },
       member_count: {
         type: Sequelize.INTEGER,

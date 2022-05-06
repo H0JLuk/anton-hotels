@@ -4,7 +4,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Rooms_photos extends Model {
     static associate(models) {
-      this.belongsTo(models.Rooms_photos);
+      this.belongsTo(models.Rooms_photos); // FIXME: случайно указал связь на саму себя
     }
   }
 

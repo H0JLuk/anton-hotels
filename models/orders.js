@@ -3,14 +3,19 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Orders extends Model {
-    static associate(models) {}
+    static associate(models) {
+      this.belongsTo(models.Room);
+    }
   }
 
   Orders.init(
     {
       client_name: DataTypes.STRING,
       client_email: DataTypes.STRING,
-      RoomId: DataTypes.INTEGER,
+      RoomId: {
+        type: DataTypes.INTEGER,
+        references: { model: 'Room', key: 'id' },
+      },
       member_count: DataTypes.INTEGER,
       message: DataTypes.TEXT,
     },

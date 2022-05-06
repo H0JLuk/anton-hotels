@@ -2044,3 +2044,22 @@ ol {
     margin-bottom: 20px;
   }
 }
+
+.orders-item {
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.orders-item_close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.orders-item p {
+  color: rgba(0, 0, 0, 0.9);
+}

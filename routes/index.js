@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const { Service, Award, Room, Rooms_photos } = require('../models');
+const { Service, Award, Room, Rooms_photos, Orders } = require('../models');
 
-router.get('/', async function (req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', {});
 });
 
@@ -35,8 +35,20 @@ router.get('/about-us', async (req, res, next) => {
   res.render('about-us', { awards });
 });
 
-router.get('/admin', async (req, res, next) => {
-  res.render('admin', {});
+router.get('/orders', async (req, res, next) => {
+  try {
+    const orders = await Orders.findAll({
+      include: {
+        model: Room,
+        // as: 'room',
+        // attributes: ['id'],
+      },
+    });
+    res.render('orders', { orders });
+  } catch (e) {
+    console.log('e', e);
+    res.sendStatus(200);
+  }
 });
 
 module.exports = router;

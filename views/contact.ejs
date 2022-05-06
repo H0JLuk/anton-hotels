@@ -15,15 +15,15 @@
         rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -37,19 +37,15 @@
         <div class="container-fluid">
             <div class="inner-header">
                 <div class="logo">
-                    <a href="/"><img src="img/logo.png" alt=""></a>
+                    <a href="/"><img src="/img/logo.png" alt=""></a>
                 </div>
-                <div class="nav-right">
-                    <a href="#" class="primary-btn">Make a Reservation</a>
-                </div>
+
                 <nav class="main-menu mobile-menu">
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/about-us">About</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/services">Services</a></li>
-                        <li><a href="/blog">News</a></li>
-                        <li class="active"><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -59,38 +55,27 @@
     <!-- Header End -->
 
     <!-- Hero Area Section Begin -->
-    <div class="hero-area set-bg other-page" data-setbg="img/about_bg.jpg">
+    <div class="hero-area set-bg other-page" data-setbg="/img/about_bg.jpg">
     </div>
     <!-- Hero Area Section End -->
-
-
 
     <!-- Contact Section Begin -->
     <section class="contact-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact-title">
-                        <div class="section-title">
-                            <span>a memorable holliday</span>
-                            <h2>Located in the center of <br />Los Angeles</h2>
-                        </div>
-                        <a href="#" class="primary-btn">Get Directions</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-lg-8">
-                    <form action="#" class="contact-form">
+                    <form action="/api/reservation" method="post" class="contact-form">
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="text" placeholder="Your name">
+                                <input name="client_name" type="text" minlength="2" required placeholder="Your name">
                             </div>
                             <div class="col-lg-6">
-                                <input type="email" placeholder="Your email">
+                                <input name="client_email" type="email" required placeholder="Your email">
                             </div>
                             <div class="col-lg-12">
-                                <input type="text" class="subject" placeholder="Subject">
+                                <input name="RoomId" value="<%= roomId %>" type="hidden">
+                                <input name="member_count" type="number" class="subject" placeholder="Members count"
+                                    min="1" max="20" required>
                                 <textarea placeholder="Message"></textarea>
                                 <button type="submit">Send Message</button>
                             </div>
@@ -99,7 +84,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="info-box">
-                        <img src="img/contact-logo.png" alt="">
+                        <img src="/img/contact-logo.png" alt="">
                         <ul>
                             <li>1525 Madison Lane, <br />Los Angeles, CA</li>
                             <li>+1 (603)535-4592</li>
@@ -121,14 +106,6 @@
     </section>
     <!-- Contact Section End -->
 
-    <!-- Map Section Begin -->
-    <div class="map">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26440.72384129847!2d-118.24906619231132!3d34.06719475913053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c659f50c318d%3A0xe2ffb80a9d3820ae!2sChinatown%2C%20Los%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1570213740685!5m2!1sen!2sbd"
-            height="910" style="border:0;" allowfullscreen=""></iframe>
-    </div>
-    <!-- Map Section End -->
-
     <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
@@ -136,7 +113,7 @@
                 <div class="col-lg-4">
                     <div class="footer-item">
                         <div class="footer-logo">
-                            <a href="#"><img src="img/logo.png" alt=""></a>
+                            <a href="#"><img src="/img/logo.png" alt=""></a>
                         </div>
                         <p>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                             dolore magna aliqua.</p>
@@ -155,8 +132,8 @@
                     <div class="footer-item">
                         <h5>Contact Info</h5>
                         <ul>
-                            <li><img src="img/placeholder.png" alt="">1525 Boring Lane,<br />Los Angeles, CA</li>
-                            <li><img src="img/phone.png" alt="">+1 (603)535-4592</li>
+                            <li><img src="/img/placeholder.png" alt="">1525 Boring Lane,<br />Los Angeles, CA</li>
+                            <li><img src="/img/phone.png" alt="">+1 (603)535-4592</li>
                         </ul>
                     </div>
                 </div>
@@ -173,7 +150,7 @@
                             <li><a href="#">Rooms</a></li>
                             <li><a href="#">Facilities</a></li>
                             <li><a href="#">News</a></li>
-                            <li><a href="#">Contact</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -195,14 +172,14 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

@@ -1,15 +1,19 @@
 var express = require('express');
 var router = express.Router();
-const passport = require('passport');
-const { Feedback, Car } = require('../models');
+const { Order } = require('../models');
 
-router.post(
-  '/login',
-  passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/',
-  }),
-);
+router.post('/reservation', async (req, res) => {
+  // const order = await Order
+  const { client_name, client_email, RoomId, member_count, message } = req.body;
+
+  res.json({
+    client_name,
+    client_email,
+    RoomId,
+    member_count,
+    message,
+  });
+});
 
 router.get('/logout', (req, res) => {
   req.logout();

@@ -1,37 +1,41 @@
 var express = require('express');
 var router = express.Router();
-// const { Article, Member, Car } = require('../models');
+const { Service, Award, Room, Rooms_photos } = require('../models');
 
 router.get('/', async function (req, res, next) {
   res.render('index', {});
 });
 
-router.get('/cars', async (req, res, next) => {
-  res.render('cars', {});
-});
-
-router.get('/contact', async (req, res, next) => {
-  res.render('contact', {});
+router.get('/reservation/:roomId', async (req, res, next) => {
+  const { roomId } = req.params;
+  res.render('contact', { roomId });
 });
 
 router.get('/rooms', async (req, res, next) => {
-  res.render('rooms', {});
+  try {
+    const rooms = await Room.findAll({
+      include: [{ model: Rooms_photos, as: 'photos', attributes: ['photo'] }],
+    });
+    console.log('rooms', rooms);
+    res.render('rooms', { rooms });
+  } catch (e) {
+    console.log('e', e);
+    res.sendStatus(200);
+  }
 });
 
 router.get('/services', async (req, res, next) => {
-  res.render('services', {});
+  const services = await Service.findAll();
+  res.render('services', { services });
 });
 
 router.get('/about-us', async (req, res, next) => {
-  res.render('about-us', {});
+  const awards = await Award.findAll();
+  res.render('about-us', { awards });
 });
 
 router.get('/admin', async (req, res, next) => {
   res.render('admin', {});
-});
-
-router.get('/blog', async (req, res, next) => {
-  res.render('blog', {});
 });
 
 module.exports = router;

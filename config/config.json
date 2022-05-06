@@ -1,24 +1,24 @@
 {
   "development": {
-    "username": "090302-ist19_gva",
-    "password": "090302-ist19_gva",
-    "database": "090302-ist19_gva",
+    "username": "090302-ist19_saa",
+    "password": "090302-ist19_saa",
+    "database": "090302-ist19_saa",
     "host": "84.201.184.150",
     "dialect": "mysql",
     "seederStorage": "json"
   },
   "test": {
-    "username": "090302-ist19_gva",
-    "password": "090302-ist19_gva",
-    "database": "090302-ist19_gva",
+    "username": "090302-ist19_saa",
+    "password": "090302-ist19_saa",
+    "database": "090302-ist19_saa",
     "host": "84.201.184.150",
     "dialect": "mysql",
     "seederStorage": "json"
   },
   "production": {
-    "username": "090302-ist19_gva",
-    "password": "090302-ist19_gva",
-    "database": "090302-ist19_gva",
+    "username": "090302-ist19_saa",
+    "password": "090302-ist19_saa",
+    "database": "090302-ist19_saa",
     "host": "84.201.184.150",
     "dialect": "mysql",
     "seederStorage": "json"

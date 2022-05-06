@@ -39,17 +39,15 @@
                 <div class="logo">
                     <a href="/"><img src="img/logo.png" alt=""></a>
                 </div>
-                <div class="nav-right">
-                    <a href="#" class="primary-btn">Make a Reservation</a>
-                </div>
+
                 <nav class="main-menu mobile-menu">
                     <ul>
-                        <li><a href="./">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li class="active"><a href="/about-us">About</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li><a href="/services">Services</a></li>
-                        <li><a href="/blog">News</a></li>
-                        <li><a href="/contact">Contact</a></li>
+
+
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -64,9 +62,8 @@
     <!-- Hero Area Section End -->
 
 
-
     <!-- About Us Section Begin -->
-    <section class="about-us spad">
+    <!-- <section class="about-us spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
@@ -113,7 +110,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- About Us Section End -->
 
     <!-- Milestone Counter Section Begin -->
@@ -170,81 +167,38 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="award-item">
-                        <img src="img/about/award-img.png" alt="">
-                        <h5>2011</h5>
-                        <h4>Best Hotel in Europe</h4>
-                        <span>Elite Hotel award</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget
-                            sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna.</p>
+                <% for (const award of awards) { %>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="award-item">
+                            <img src="<%= award.photo %>" alt="">
+                            <h5>
+                                <%= award.year %>
+                            </h5>
+                            <h4>
+                                <%= award.name %>
+                            </h4>
+                            <span>
+                                <%= award.value %>
+                            </span>
+                            <p>
+                                <%= award.description %>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="award-item">
-                        <img src="img/about/award-img.png" alt="">
-                        <h5>2012</h5>
-                        <h4>Best Services</h4>
-                        <span>Elite Hotel award</span>
-                        <p>Ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget sapien ac,
-                            ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="award-item">
-                        <img src="img/about/award-img.png" alt="">
-                        <h5>2014</h5>
-                        <h4>Best Hotel Spa</h4>
-                        <span>Elite Hotel award</span>
-                        <p>Dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget sapien ac,
-                            ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare. </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="award-item">
-                        <img src="img/about/award-img.png" alt="">
-                        <h5>2016</h5>
-                        <h4>Best Luxury Hotel</h4>
-                        <span>Elite Hotel award</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget
-                            sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="award-item">
-                        <img src="img/about/award-img.png" alt="">
-                        <h5>2017</h5>
-                        <h4>2nd Place @ Best Hotel</h4>
-                        <span>Elite Hotel award</span>
-                        <p>Ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget sapien ac,
-                            ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="award-item">
-                        <img src="img/about/award-img.png" alt="">
-                        <h5>2018</h5>
-                        <h4>Best Hotel Spa</h4>
-                        <span>Elite Hotel award</span>
-                        <p>Dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget sapien ac,
-                            ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare.</p>
-                    </div>
-                </div>
+                    <% } %>
+
             </div>
         </div>
     </section>
     <!-- Award Section End -->
 
-    <!-- Call To Action Begin -->
-    <section class="callto-section">
-        <div class="container">
-            <div class="callto-text">
-                <h2>Book your stay with us now!</h2>
-            </div>
-            <a href="#" class="primary-btn">Make a Reservation</a>
-        </div>
-    </section>
-    <!-- Call To Action End  -->
+    <!-- Map Section Begin -->
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26440.72384129847!2d-118.24906619231132!3d34.06719475913053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c659f50c318d%3A0xe2ffb80a9d3820ae!2sChinatown%2C%20Los%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1570213740685!5m2!1sen!2sbd"
+            height="910" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+    <!-- Map Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
@@ -290,7 +244,7 @@
                             <li><a href="#">Rooms</a></li>
                             <li><a href="#">Facilities</a></li>
                             <li><a href="#">News</a></li>
-                            <li><a href="#">Contact</a></li>
+
                         </ul>
                     </div>
                 </div>

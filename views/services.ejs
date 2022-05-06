@@ -39,17 +39,15 @@
                 <div class="logo">
                     <a href="/"><img src="img/logo.png" alt=""></a>
                 </div>
-                <div class="nav-right">
-                    <a href="#" class="primary-btn">Make a Reservation</a>
-                </div>
+
                 <nav class="main-menu mobile-menu">
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/about-us">About</a></li>
                         <li><a href="/rooms">Rooms</a></li>
                         <li class="active"><a href="/services">Services</a></li>
-                        <li><a href="/blog">News</a></li>
-                        <li><a href="/contact">Contact</a></li>
+
+
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -69,132 +67,25 @@
     <section class="services-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-item">
-                        <div class="si-pic set-bg" data-setbg="img/services/service-1.jpg">
-                            <div class="service-icon">
-                                <img src="img/services/service-icon-1.png" alt="">
+                <% for (const service of services) { %>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="services-item">
+                            <div class="si-pic set-bg" data-setbg="<%= service.photo %>">
+                                <div class="service-icon">
+                                    <img src="<%= service.icon %>" alt="">
+                                </div>
+                            </div>
+                            <div class="si-text">
+                                <h3>
+                                    <%= service.name %>
+                                </h3>
+                                <p>
+                                    <%= service.description %>
+                                </p>
                             </div>
                         </div>
-                        <div class="si-text">
-                            <h3>Infinity Pool</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-item">
-                        <div class="si-pic set-bg" data-setbg="img/services/service-2.jpg">
-                            <div class="service-icon">
-                                <img src="img/services/service-icon-2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="si-text">
-                            <h3>Fitness Area</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-item">
-                        <div class="si-pic set-bg" data-setbg="img/services/service-3.jpg">
-                            <div class="service-icon">
-                                <img src="img/services/service-icon-3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="si-text">
-                            <h3>Shuttle</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-item">
-                        <div class="si-pic set-bg" data-setbg="img/services/service-4.jpg">
-                            <div class="service-icon">
-                                <img src="img/services/service-icon-4.png" alt="">
-                            </div>
-                        </div>
-                        <div class="si-text">
-                            <h3>Restaurant</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-item">
-                        <div class="si-pic set-bg" data-setbg="img/services/service-5.jpg">
-                            <div class="service-icon">
-                                <img src="img/services/service-icon-5.png" alt="">
-                            </div>
-                        </div>
-                        <div class="si-text">
-                            <h3>City Guide</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-item">
-                        <div class="si-pic set-bg" data-setbg="img/services/service-6.jpg">
-                            <div class="service-icon">
-                                <img src="img/services/service-icon-6.png" alt="">
-                            </div>
-                        </div>
-                        <div class="si-text">
-                            <h3>Day Trips</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-item">
-                        <div class="si-pic set-bg" data-setbg="img/services/service-7.jpg">
-                            <div class="service-icon">
-                                <img src="img/services/service-icon-7.png" alt="">
-                            </div>
-                        </div>
-                        <div class="si-text">
-                            <h3>Spa & Sauna</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-item">
-                        <div class="si-pic set-bg" data-setbg="img/services/service-8.jpg">
-                            <div class="service-icon">
-                                <img src="img/services/service-icon-8.png" alt="">
-                            </div>
-                        </div>
-                        <div class="si-text">
-                            <h3>Free Diving</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="services-item">
-                        <div class="si-pic set-bg" data-setbg="img/services/service-9.jpg">
-                            <div class="service-icon">
-                                <img src="img/services/service-icon-9.png" alt="">
-                            </div>
-                        </div>
-                        <div class="si-text">
-                            <h3>Private Guide</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-                        </div>
-                    </div>
-                </div>
+                    <% } %>
             </div>
         </div>
     </section>
@@ -244,7 +135,7 @@
                             <li><a href="#">Rooms</a></li>
                             <li><a href="#">Facilities</a></li>
                             <li><a href="#">News</a></li>
-                            <li><a href="#">Contact</a></li>
+
                         </ul>
                     </div>
                 </div>
